@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .fondo {
+            width: 100%;
+            height: 100%; /* Ocupa toda la altura de la ventana */
+            position: relative; /* Posicionamiento relativo para el hijo */
+            overflow: hidden; /* Evita que se desborde */
+        }
+
+        .fondo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra todo el div */
+            position: absolute; /* Posiciona la imagen en el fondo */
+            top: 0;
+            left: 0;
+        }
+
+        .contenido {
+            
+            width: 400px;
+            height: auto;
+            position: relative; 
+            backdrop-filter: blur(5px); 
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px; 
+            color: black; 
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .contenido:nth-of-type(1) {
+            top: 10%;
+            left: 60%; 
+        }
+
+        .contenido:nth-of-type(2) {
+            top: 35%; 
+            left: 50%; 
+        }
+
+        .contenido:nth-of-type(3) {
+            top: 40%;
+            left: 5%; 
+        }
+        footer {
+            color: black;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; 
+            backdrop-filter: blur(5px);
+            font-size: 0.4em; 
+        }
+    </style>
+</head>
+<body >
+    <div class="fondo">
+        <img src="hiyori-yato-snow.gif">
+        <div class="contenido">
+            <fieldset>
+                <legend>fzt Good</legend>
+                <p>
+                    fzt uwu emmmm holi XD no me hagas caso toy loco no c k hago xd
+                    Gracias por jugar junto a mi, espero poder haberte hecho reir al menos un poco.
+                </p>
+            </fieldset>
+        </div>
+        <div class="contenido">
+            <fieldset>
+                <legend>psdt1</legend>
+                <p>
+                    La queremos tanto yo como yato owo 🌷
+                </p>
+            </fieldset>
+        </div>
+        <div class="contenido">
+            <fieldset>
+                <legend>psdt2</legend>
+                <p>
+                    espero animarla un poco :D
+                </p>
+            </fieldset>
+        </div>
+    </div>
+    <footer>
+        <div><p>ciao bella</p></div>
+    </footer>
+</body>
+</html>
