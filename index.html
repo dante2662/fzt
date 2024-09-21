@@ -3,56 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>18-09-24</title>
     <style> 
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
+            overflow-x: hidden; /* Evita el desbordamiento horizontal */
         }
 
         .fondo {
             width: 100%;
-            height: 100%; /* Ocupa toda la altura de la ventana */
-            position: relative; /* Posicionamiento relativo para el hijo */
-            overflow: hidden; /* Evita que se desborde */
+            height: 100%;
+            position: relative;
+            overflow: hidden;
         }
 
         .fondo img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen cubra todo el div */
-            position: absolute; /* Posiciona la imagen en el fondo */
+            object-fit: cover;
+            position: absolute;
             top: 0;
             left: 0;
         }
 
         .contenido {
-            
-            width: 400px;
+            width: 90%; /* Cambiado a porcentaje para mayor flexibilidad */
+            max-width: 300px; /* Mantener un ancho máximo */
             height: auto;
-            position: relative; 
-            backdrop-filter: blur(5px); 
+            backdrop-filter: blur(5px);
             padding: 20px;
-            margin: 20px;
-            border-radius: 10px; 
-            color: black; 
+            border-radius: 10px;
+            color: black;
             font-family: 'Courier New', Courier, monospace;
-        }
-        .contenido:nth-of-type(1) {
-            top: 10%;
-            left: 60%; 
+            position: absolute; /* Cambiado a absolute para posiciones */
+            opacity: 0.9; /* Para un mejor contraste */
         }
 
-        .contenido:nth-of-type(2) {
-            top: 35%; 
-            left: 50%; 
+        .contenido fieldset {
+            border: none; /* Elimina el borde del fieldset para un mejor aspecto */
+            padding: 0; /* Elimina el padding */
         }
 
-        .contenido:nth-of-type(3) {
-            top: 40%;
-            left: 5%; 
+        .contenido img {
+            max-width: 100px; /* Limita el ancho de la imagen */
+            height: auto; /* Mantiene la proporción */
+            margin: 25px 220px; /* Centra la imagen */
+            display: block; /* Asegura que la imagen se comporte como bloque */
         }
+
         footer {
             color: black;
             text-align: center;
@@ -63,12 +63,24 @@
             backdrop-filter: blur(5px);
             font-size: 0.4em; 
         }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            .contenido {
+                width: 95%; /* Aumentar el ancho en pantallas pequeñas */
+                margin: 10px; /* Reducir el margen */
+            }
+
+            footer {
+                font-size: 0.5em; /* Ajustar el tamaño del texto */
+            }
+        }
     </style>
 </head>
-<body >
+<body>
     <div class="fondo">
-        <img src="hiyori-yato-snow.gif">
-        <div class="contenido">
+        <img src="hiyori-yato-snow.gif" alt="Fondo">
+        <div class="contenido" id="contenido1">
             <fieldset>
                 <legend>fzt Good</legend>
                 <p>
@@ -77,19 +89,31 @@
                 </p>
             </fieldset>
         </div>
-        <div class="contenido">
+        <div class="contenido" id="contenido2">
             <fieldset>
                 <legend>psdt1</legend>
                 <p>
-                    La queremos tanto yo como yato owo 🌷
+                    La queremos tanto yo
+                    <br> como yato owo 🌷
                 </p>
             </fieldset>
+            <img src="st.png" alt="">
         </div>
-        <div class="contenido">
+        <div class="contenido" id="contenido3">
             <fieldset>
                 <legend>psdt2</legend>
                 <p>
-                    espero animarla un poco :D
+                    espero animarla 
+                    <br>un poco :D
+                </p>
+            </fieldset>
+            <img src="kf.png" alt="Imagen">
+        </div>
+        <div class="contenido" id="contenido4">
+            <fieldset>
+                <legend>by:</legend>
+                <p>
+                   Daniel
                 </p>
             </fieldset>
         </div>
@@ -97,5 +121,20 @@
     <footer>
         <div><p>ciao bella</p></div>
     </footer>
+
+    <script>
+        // Función para posicionar los cuadros de forma aleatoria en el eje X
+        function posicionarCuadros() {
+            const contenidos = document.querySelectorAll('.contenido');
+            contenidos.forEach((contenido, index) => {
+                const top = 20 + index * 230; // Ajusta 230 para el espaciado vertical entre cuadros
+                const left = Math.random() * (window.innerWidth - 300); // Variar solo la posición horizontal
+                contenido.style.top = `${top}px`;
+                contenido.style.left = `${left}px`;
+            });
+        }
+
+        window.onload = posicionarCuadros;
+    </script>
 </body>
 </html>
